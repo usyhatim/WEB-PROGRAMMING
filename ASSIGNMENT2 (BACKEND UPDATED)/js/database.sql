@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS news_editor;
+USE news_editor;
+
+DROP TABLE IF EXISTS documents;
+
+CREATE TABLE documents (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    category VARCHAR(50) DEFAULT 'research',
+    display_date VARCHAR(50) DEFAULT NULL,
+    word_count INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
